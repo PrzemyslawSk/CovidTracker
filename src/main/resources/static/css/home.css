@@ -1,0 +1,163 @@
+:root {
+    --jumbotron-padding-y: 3rem;
+  }
+  body{
+    background-color: #e8e8e8;
+  }
+
+  .jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  @media (min-width: 768px) {
+    .jumbotron {
+      padding-top: calc(var(--jumbotron-padding-y) * 2);
+      padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+    }
+  }
+
+  /* navbar */
+  .navbar-nav {
+    margin-left: 100px;
+  }
+
+  .counter-up{
+    background: url("../img/covidbck.jpg") no-repeat;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .counter-up::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .counter-up .content{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .content .box{
+    width: calc(25% - 30px);
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+    flex-direction: column;
+  }
+
+  .content .box .icon{
+    font-size: 48px;
+    color: #e6e6e6;
+  }
+
+  .content .box .numscroller{
+    font-size: 35px;
+    color: #f2f2f2;
+    font-weight: 500;
+    font-family: sans-serif;
+  }
+
+  .content .box .text{
+    color: #ccc;
+    font-weight: 400;
+  }
+
+  .bi-globe {
+    fill: #b8bbbd;
+  }
+
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+  }
+
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+
+  .jumbotron-heading {
+    font-weight: 300;
+  }
+
+  .jumbotron .container {
+    max-width: 50rem;
+  }
+
+  .card .fa-head-side-mask{
+    color: #CC99FF;
+  }
+  .card .fa-people-arrows{
+    color: #9999FF;
+  }
+  .card .fa-hands-wash{
+    color: #5be09e;
+  }
+  .card .fa-box-tissue{
+    color: #9ee25a;
+  }
+  .card .fa-heartbeat{
+    color: #FF6666;
+  }
+  .card .fa-syringe{
+    color: #FFB266;
+  }
+
+  .num1 .card{
+    min-height: 540px;
+  }
+  .num2 .card{
+    min-height: 605px;
+  }
+  .num3 .card{
+    min-height: 388px;
+  }
+
+  footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  footer p {
+    margin-bottom: .15rem;
+  }
+
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+    @media (max-width: 1036px){
+      .counter-up{
+        padding: 50px 50px 0 50px;
+      }
+      .content .box{
+        width: calc(25% - 30px);
+        margin-bottom: 50px;
+      }
+
+    }
+    @media (max-width: 580px){
+      .content .box{
+        width: 100%;
+      }
+
+    }

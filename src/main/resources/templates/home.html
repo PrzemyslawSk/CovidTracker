@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+</head>
+
+<body>
+<div th:replace="/fragments/navbar-fragment :: navbar"></div>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Coronavirus Disease 2019 (COVID-19)</h1>
+        <p class="lead text-muted">is a contagious disease caused by severe acute respiratory syndrome coronavirus 2
+            (SARS-CoV-2). The first case was identified in Wuhan, China, in December 2019. It has since spread
+            worldwide, leading to an ongoing pandemic.</p>
+    </div>
+</section>
+
+<div class="counter-up">
+    <div class="content">
+        <div class="box">
+            <div class="icon"><i class="fas fa-viruses"></i></div>
+            <span class='numscroller' data-min='0'  th:data-max='${totalReportedCases}' data-delay='5' data-increment='987654'>0</span>
+            <div class="text">Infected</div>
+        </div>
+        <div class="box">
+            <div class="icon"><i class="fas fa-skull-crossbones"></i></div>
+            <span class='numscroller' data-min='0' th:data-max='${totalReportedDeaths}' data-delay='5' data-increment='9876'>0</span>
+            <div class="text">Deaths</div>
+        </div>
+        <div class="box">
+            <div class="icon"><i class="fas fa-syringe"></i></div>
+            <span class='numscroller' data-min='0' th:data-max='${totalReportedRecovered}' data-delay='5' data-increment='987654'>0</span>
+            <div class="text">Recovered</div>
+        </div>
+    </div>
+</div>
+
+<div class="container num1">
+    <div class="row mb-2">
+        <!--col1-->
+        <div class="col-md-6">
+            <div class="card flex-md-row my-4 box-shadow h-md-250" data-aos="fade-right">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-head-side-mask"></i>
+                        <a>Wear a mask</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <ul>
+                        <li>Everyone 2 and older should <strong>wear masks</strong> in public.</li>
+                        <li>Masks should be worn in addition to staying at least 6 feet apart, especially around people who don’t live with you.</li>
+                        <li>If someone in your household is infected, people in the household should take precautions including wearing masks to avoid spread to others.</li>
+                        <li><strong>Wash your hands or use hand sanitizer</strong> before putting on your mask.</li>
+                        <li>Wear your mask over your nose and mouth and secure it under your chin.</li>
+                        <li>Fit the mask snugly against the sides of your face, slipping the loops over your ears or tying the strings behind your head.</li>
+                        <li>If you have to continually adjust your mask, it doesn’t fit properly, and you might need to find a different mask type or brand.</li>
+                        <li>Make sure you can breathe easily.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card flex-md-row my-4 box-shadow h-md-250" data-aos="fade-left">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-people-arrows"></i>
+                        <a>Stay 6 feet away from others</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <strong>Inside your home:</strong>
+                    <ul>
+                        <li>Avoid close contact with people who are sick.</li>
+                        <li>If possible, maintain 6 feet between the person who is sick and other household members.</li>
+                    </ul>
+                    <strong>Outside your home:</strong>
+                    <ul>
+                        <li>Put 6 feet of distance between yourself and people who don’t live in your household.</li>
+                        <li>Remember that some people without symptoms may be able to spread virus.</li>
+                        <li>Stay at least 6 feet (about 2 arm lengths) from other people.</li>
+                        <li>Keeping distance from others is especially important for people who are at higher risk of getting very sick.</li>
+                        <li>Being in crowds like in restaurants, bars, fitness centers, or movie theaters put you at higher risk for COVID-19.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container num2">
+    <div class="row mb-2">
+        <!--col1-->
+        <div class="col-md-6">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250" data-aos="fade-right">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-hands-wash"></i>
+                        <a>Wash your hands often</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <ul>
+                        <li>Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.</li>
+                        <li>If soap and water are not readily available,<strong> use a hand sanitizer that contains at least 60% alcohol.</strong> Cover all surfaces of your hands and rub them together until they feel dry.</li>
+                        <li><strong>Avoid touching your eyes, nose, and mouth</strong> with unwashed hands.</li>
+                    </ul>
+                    <strong class="mb-2">It’s especially important to wash:</strong>
+                    <ul>
+                        <li>Before eating or preparing food</li>
+                        <li>Before touching your face</li>
+                        <li>After using the restroom</li>
+                        <li>After leaving a public place</li>
+                        <li>After blowing your nose, coughing, or sneezing</li>
+                        <li>After handling your mask</li>
+                        <li>After changing a diaper</li>
+                        <li>After caring for someone sick</li>
+                        <li>After touching animals or pets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250" data-aos="fade-left">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-box-tissue"></i>
+                        <a>Cover mouth and clean surfaces</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <ul>
+                        <li><strong>Always cover your mouth and nose</strong> with a tissue when you cough or sneeze or use the inside of your elbow and do not spit.</li>
+                        <li><strong>Throw used tissues</strong> in the trash.</li>
+                        <li>Immediately<strong>wash your hands</strong> with soap and water for at least 20 seconds. If soap and water are not readily available, clean your hands with a hand sanitizer that contains at least 60% alcohol.</li>
+                        <li><strong>Clean AND disinfect frequently touched surfaces daily.</strong> This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.</li>
+                        <li><strong>If surfaces are dirty,</strong> clean them. Use detergent or soap and water prior to disinfection, <strong>then use a household disinfectant.</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container num3">
+    <div class="row mb-2">
+        <!--col1-->
+        <div class="mb-4 col-md-6 ">
+            <div class="card flex-md-row box-shadow h-md-250" data-aos="fade-right">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-heartbeat"></i>
+                        <a>Monitor Your Health Daily</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <ul>
+                        <li><strong>Be alert for symptoms.</strong> Watch for fever, cough, shortness of breath, or other symptoms of COVID-19. Especially important if you are running essential errands, going into the office or workplace, and in settings where it may be difficult to keep a physical distance of 6 feet.</li>
+                        <li><strong>Take your temperature if symptoms develop.</strong> - Don’t take your temperature within 30 minutes of exercising or after taking medications that could lower your temperature, like acetaminophen.</li>
+                        <li>Follow CDC guidance if symptoms develop.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card flex-md-row box-shadow h-md-250" data-aos="fade-left">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <i class="fas fa-syringe"></i>
+                        <a>Get vaccinated</a>
+                        <hr>
+                    </h3>
+                    <br>
+                    <ul>
+                        <li>COVID-19 vaccination is especially important for people who may be more likely to get very sick from COVID-19, such as older adults and people with certain medical conditions.</li>
+                        <li>People with underlying medical conditions may get a COVID-19 vaccine as long as they have not had a severe or immediate allergic reaction to the first dose of COVID-19 vaccine or any of the ingredients in a COVID-19 vaccine. CDC has made recommendations on who should get vaccinated first.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="/fragments/footer-fragment :: footer"></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/e26e4799e8.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+<script src="../js/nsc.js"></script>
+
+</body>
+</html>
